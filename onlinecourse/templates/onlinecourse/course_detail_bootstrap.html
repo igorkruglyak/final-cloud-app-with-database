@@ -48,6 +48,8 @@
                         <div class="card-header"><h5>Lesson {{lesson.order|add:1}}: {{lesson.title}}</h5></div>
                         <div class="card-body">{{lesson.content}}</div>
                     </div>
+                    {% endfor %}
+            </div>
                 <!-- <HINT> If user is authenticated, show course exam with a list of question -->
                     {% if user.is_authenticated %}
                         <button data-toggle="collapse" data-target="#exam_{{lesson.id}}" class=" btn-primary btn-block"
@@ -78,8 +80,7 @@
                             </form>
                         </div>
                     {% endif %}
-                {% endfor %}
-            </div>
+                
             <!-- Task: show questions and choices -->
             <!-- <HINT> Use Bootstrap Collapse to hide exam first, more details could be found here
             https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp-->
